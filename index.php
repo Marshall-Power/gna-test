@@ -19,6 +19,8 @@
   <style>
     tr:nth-child(odd) {background: #C0C0C0}
     th {background: #fff}
+
+    button{border-radius: 8px;}
   </style>
 
   <script>
@@ -36,9 +38,9 @@
 
   <body>
   <div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openCity('Llistat')">Llistat básic</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Editorials')">Llistat editorials per autor</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('barats')">Llistat menors de 15€ (sense IVA)</button>
+  <button  onclick="openCity('Llistat')">Llistat básic</button>
+  <button  onclick="openCity('Editorials')">Llistat editorials per autor</button>
+  <button  onclick="openCity('barats')">Llistat menors de 15€ (sense IVA)</button>
 </div>
   <div id="Llistat" class="llistat">
     <table>
