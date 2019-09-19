@@ -1,4 +1,4 @@
-<?php //Ens connectem a la base de dades
+<?php /*Ens connectem a la base de dades es podria fer amb un include i tenir la conexió en un fitxer apart */
   $server = "localhost";
   $username = "root";
   $password = "";
@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <title>Biblioteca de Llibres</title>
   </head>
-    <!-- Estils per arreglarho una mica --> 
+    <!-- Estils per arreglar-ho una mica --> 
   <style> 
     tr:nth-child(odd) {background: #C0C0C0}
     th {background: #fff}
@@ -24,7 +24,7 @@
     button{border-radius: 8px;}
   </style>
 
-  <!-- Javascript que ens posarà i treurà els estils per fer l'efecte de pestañes --> 
+  <!-- Javascript que ens posarà i treurà els estils per fer l'efecte de pestanyes --> 
   <script>
     function tabllista(list) {
       var i;
