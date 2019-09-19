@@ -14,7 +14,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>BDD de Llibres</title>
+    <title>Biblioteca de Llibres</title>
   </head>
     <!-- Estils per arreglarho una mica --> 
   <style> 
