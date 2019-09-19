@@ -90,8 +90,8 @@
 
       $dosql = $con->query($sql);
       while($result=$dosql->FETCH_ASSOC()){
-        echo "<tr><td>".utf8_encode($result["editorial"])."</td>
-              <td>".utf8_encode($result["autor"])."</td>";
+        echo "<tr><td>".utf8_encode($result["autor"])."</td>
+              <td>".utf8_encode($result["editorial"])."</td>";
         }
       ?>
     </tbody>
