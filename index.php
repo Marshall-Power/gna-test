@@ -22,20 +22,26 @@
   <th>
     <tr>
       <td> Títol </td>
-      <td> autor_id </td>
-      <td> editorial_id </td>
+      <td> Autor </td>
+      <td> Editorial </td>
       <td> Preu </td>
     </tr>
   </th>
   <tbody>
   <?php
-  $sql = "SELECT * FROM llibres";
+  $sql = "SELECT  autors.nom, editorials.nom, llibres.titol, llibres.preu 
+          FROM llibres
+          LEFT JOIN autors
+          ON llibres.autor_id = autors.id
+          LEFT JOIN editorials
+          ON llibres.editorial_id = editorials.id
+  ";
 
   $dosql = $con->query($sql);
   while($result=$dosql->FETCH_ASSOC()){
     echo "<tr><td>".utf8_encode($result["titol"])."</td>
-          <td>".utf8_encode($result["autor_id"])."</td>
-          <td>".utf8_encode($result["editorial_id"])."</td>
+          <td>".utf8_encode($result["nom"])."</td>
+          <td>".utf8_encode($result["nom"])."</td>
           <td>".$result["preu"]."</td></tr>";
   }
   ?>
