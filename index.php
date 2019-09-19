@@ -18,7 +18,7 @@
   </head>
     <!-- Estils per arreglar-ho una mica --> 
   <style> 
-    tr:nth-child(odd) {background: #C0C0C0}
+    tr:nth-child(odd) {background: #DCDCDC}
     th {background: #fff}
 
     button{border-radius: 8px;}
