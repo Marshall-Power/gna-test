@@ -112,7 +112,7 @@
       <th> Títol </th>
       <th> Autor </th>
       <th> Editorial </th>
-      <th> Preu </th>
+      <th> Preu final (amb IVA)</th>
     </tr>
       <tbody>
       <?php
