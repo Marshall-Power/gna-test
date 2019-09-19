@@ -71,33 +71,62 @@
   </div>
 
 <div id="Editorials" class="llistat" style="display:none">
-<table>
-      <tr>
-          <th> Editorial </th>
-          <th> Autor</th>
-      </tr>
-      <tbody>
-      <?php
-        $sql = "SELECT  editorials.nom AS editorial, autors.nom as autor
-                FROM editorialsautors
-                LEFT JOIN editorials
-                ON editorialsautors.editorial_id = editorials.id
-                LEFT JOIN autors
-                ON editorialsautors.autor_id = autors.id
-        ";
+  <table>
+    <tr>
+        <th> Editorial </th>
+        <th> Autor</th>
+    </tr>
+    <tbody>
+    <?php
+      $sql = "SELECT  editorials.nom AS editorial, autors.nom as autor
+              FROM editorialsautors
+              LEFT JOIN editorials
+              ON editorialsautors.editorial_id = editorials.id
+              LEFT JOIN autors
+              ON editorialsautors.autor_id = autors.id
+      ";
 
-        $dosql = $con->query($sql);
-        while($result=$dosql->FETCH_ASSOC()){
-          echo "<tr><td>".utf8_encode($result["editorial"])."</td>
-                <td>".utf8_encode($result["autor"])."</td>";
-          }
-        ?>
-      </tbody>
-    </table>
-</div>
+      $dosql = $con->query($sql);
+      while($result=$dosql->FETCH_ASSOC()){
+        echo "<tr><td>".utf8_encode($result["editorial"])."</td>
+              <td>".utf8_encode($result["autor"])."</td>";
+        }
+      ?>
+    </tbody>
+  </table>
+  </div>
 
 <div id="barats" class="llistat" style="display:none">
- 
+  <table>
+    <tr>
+      <th> Títol </th>
+      <th> Autor </th>
+      <th> Editorial </th>
+      <th> Preu </th>
+    </tr>
+      <tbody>
+      <?php
+      $sql = "SELECT  autors.nom, editorials.nom AS nomeditorial, llibres.titol, llibres.preu 
+              FROM llibres
+              LEFT JOIN autors
+              ON llibres.autor_id = autors.id
+              LEFT JOIN editorials
+              ON llibres.editorial_id = editorials.id
+              WHERE preu < 15
+      ";
+
+      $dosql = $con->query($sql);
+      while($result=$dosql->FETCH_ASSOC()){
+        $total = $result["preu"]+($result["preu"]*(21/100));
+        echo "<tr><td>".utf8_encode($result["titol"])."</td>
+              <td>".utf8_encode($result["nom"])."</td>
+              <td>".utf8_encode($result["nomeditorial"])."</td>
+              <td>".round($total,2)."</td></tr>";
+        }
+      ?>
+      </tbody>
+    </table>
+  </div>
 </div>
   
   
